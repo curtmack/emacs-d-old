@@ -24,3 +24,14 @@
 (use-package helm-themes)
 
 (use-package helm-unicode)
+
+(use-package helm-projectile
+  :config
+  (evil-leader/set-key
+    "pb" 'helm-projectile-switch-to-buffer
+    "pd" 'helm-projectile-find-dir
+    "pf" 'helm-projectile-find-file
+    "ph" 'helm-projectile
+    "pp" 'helm-projectile-switch-project
+    "pr" 'helm-projectile-recentf
+    "pv" 'projectile-vc))

@@ -1,3 +1,9 @@
+;; path fix for Cygwin
+;; emacs-w32 in Cygwin doesn't know how to find POSIX binaries
+;; let's help it because we're nice people
+(if (eq system-type 'cygwin)
+    (setq exec-path (append '("/usr/local/bin" "/usr/bin") exec-path)))
+
 ;; initialize package.el
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -107,6 +113,10 @@
   ;;(add-hook 'prog-mode-hook #'rainbow-identifiers-mode)
   )
 
+;; evil setup and keybindings
+(load-file (make-emacs-d-subpath "evil-init.el"))
+(load-file (make-emacs-d-subpath "evil-keybinds.el"))
+
 ;; circe setup
 (load-file (make-emacs-d-subpath "circe-init.el"))
 
@@ -116,15 +126,14 @@
 ;; web setup
 (load-file (make-emacs-d-subpath "web-init.el"))
 
-;; clojure setup
-(load-file (make-emacs-d-subpath "clojure-init.el"))
+;; projectile setup
+(load-file (make-emacs-d-subpath "projectile-init.el"))
 
 ;; helm setup
 (load-file (make-emacs-d-subpath "helm-init.el"))
 
-;; evil setup and keybindings
-(load-file (make-emacs-d-subpath "evil-init.el"))
-(load-file (make-emacs-d-subpath "evil-keybinds.el"))
+;; clojure setup
+(load-file (make-emacs-d-subpath "clojure-init.el"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

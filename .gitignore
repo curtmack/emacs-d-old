@@ -1,4 +1,8 @@
 elpa/
+eshell/
+games/
 helm-adaptive-history
 \#*\#
 *~
+*.elc
+projectile-bookmarks.eld
