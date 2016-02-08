@@ -3,7 +3,9 @@
   :config
   (helm-mode 1)
   (helm-adaptive-mode 1)
-  (helm-push-mark-mode 1))
+  (helm-push-mark-mode 1)
+  (evil-leader/set-key
+    "ff" 'helm-find-files))
 
 (use-package helm-ag)
 
