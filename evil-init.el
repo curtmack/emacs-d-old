@@ -106,10 +106,4 @@
   :config
   (global-evil-visualstar-mode t))
 
-;; this isn't technically part of evil, but it's vimish so it goes here
-(use-package vi-tilde-fringe
-  :diminish vi-tilde-fringe-mode
-  :config
-  (global-vi-tilde-fringe-mode))
-
 (evil-mode 1)
