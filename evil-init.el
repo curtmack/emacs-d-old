@@ -42,9 +42,9 @@
   :config
   (evil-indent-plus-default-bindings))
 
-(use-package evil-jumper
+(use-package evil-matchit
   :config
-  (evil-jumper-mode t))
+  (global-evil-matchit-mode t))
 
 (use-package evil-leader
   :config
